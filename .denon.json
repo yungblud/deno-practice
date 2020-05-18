@@ -16,7 +16,9 @@
         "source/"
     ],
     "deno_args":[
-        "--allow-net=0.0.0.0:8080"
+        "--allow-net=0.0.0.0:8080",
+        "--allow-read",
+        "--unstable"
     ],
     "execute": {
         ".js": ["deno", "run"],
