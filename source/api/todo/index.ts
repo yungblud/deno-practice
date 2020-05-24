@@ -1,22 +1,13 @@
-import { Router, Context } from "https://deno.land/x/oak/mod.ts"
-import { create, read, readById, updateIsDoneById } from "./todo.ctrl.ts"
+import { Router } from "https://deno.land/x/oak/mod.ts"
+import { create, read, list, toggleIsDone, deleteTodoById } from "./todo.ctrl.ts"
 // import { Todo } from "../../models/todo.ts"
 
 const router = new Router()
 
-router.get("/api/todo", read)
-
-router.get("/api/todo/:id", readById)
-
+router.get("/api/todo", list)
+router.get("/api/todo/:id", read)
 router.post("/api/todo", create)
-
-router.patch("/api/todo/:id", updateIsDoneById)
-
-router.delete("/api/todo/:id", (ctx) => {
-    const { id } = ctx.params
-    ctx.response.body = {
-        id
-    }
-})
+router.patch("/api/todo/:id", toggleIsDone)
+router.delete("/api/todo/:id", deleteTodoById)
 
 export default router
