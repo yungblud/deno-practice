@@ -16,8 +16,9 @@
         "source/"
     ],
     "deno_args":[
-        "--allow-net=0.0.0.0:8080",
+        "--allow-net=0.0.0.0:8000",
         "--allow-read",
+        "--allow-write",
         "--unstable"
     ],
     "execute": {

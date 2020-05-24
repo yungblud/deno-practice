@@ -1,2 +1,5 @@
-export * from "./todo.ts"
-export * from "./handleError.ts"
+import todo from "./todo/index.ts"
+
+export default {
+    todo
+}
